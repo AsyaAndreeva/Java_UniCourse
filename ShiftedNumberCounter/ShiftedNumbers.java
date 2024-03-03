@@ -17,6 +17,9 @@ public class ShiftedNumbers {
     int numberOfShiftedNumbers() {
         int result = 0;
         for (int number = bottom; number <= top; number++) {
+            if( bottom<0 || top<0){
+                return 0;
+            }
             String numberStr = Integer.toString(number);
             String modifiedStr = numberStr.substring(1) + numberStr.charAt(0);
             int modifiedNumber = Integer.parseInt(modifiedStr);
