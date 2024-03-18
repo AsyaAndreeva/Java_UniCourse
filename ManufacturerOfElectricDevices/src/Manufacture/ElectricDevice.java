@@ -1,5 +1,7 @@
 package Manufacture;
 
+import static java.lang.Math.max;
+
 public class ElectricDevice {
 
     private Manufacturer manufacturer;
@@ -8,7 +10,7 @@ public class ElectricDevice {
 
     public ElectricDevice(Manufacturer manufacturer, int minPeriodOfWarantyInMonths) {
         this.manufacturer = manufacturer;
-        this.minPeriodOfWarantyInMonths = minPeriodOfWarantyInMonths;
+        this.minPeriodOfWarantyInMonths = max(minPeriodOfWarantyInMonths, 6);
     }
 
    public int warranty(){
@@ -20,7 +22,7 @@ public class ElectricDevice {
    }
 
     public int getMinPeriodOfWarantyInMonths() {
-        return minPeriodOfWarantyInMonths;
+        return max(minPeriodOfWarantyInMonths, 6);
     }
 
     public void setMinPeriodOfWarantyInMonths(int minPeriodOfWarantyInMonths) {
